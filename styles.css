@@ -208,6 +208,7 @@ nav {
 .about-me__links {
   display: flex;
   justify-content: center;
+  margin-bottom: 40px;
   animation: fade-up 650ms 800ms backwards;
 }
 
@@ -237,6 +238,7 @@ nav {
 
 .about-me__img {
   width: 100%;
+  margin-bottom: 40px;
   animation: fade-in 1200ms 800ms backwards;
 }
 
@@ -472,6 +474,10 @@ footer {
     padding: 20px;
   }
 
+  .about-me__img {
+    padding: 0 20px;
+  }
+
   .language {
     width: calc(100% / 3);
   }
@@ -521,9 +527,5 @@ footer {
   .project__description--sub-title {
     text-align: center;
     margin: 12px 0;
-  }
-
-  .about-me__img {
-    padding: 0 20px;
   }
 }
