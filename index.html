@@ -3,106 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Site</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./index.js"></script>
     <script
       src="https://kit.fontawesome.com/d760ca934c.js"
       crossorigin="anonymous"
     ></script>
-    <title>Portfolio Site</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "wE7zI2kGZwiepNlCH",
+        });
+      })();
+    </script>
   </head>
   <body>
-    <section id="about-me">
-      <nav>
-        <div class="personal__logo">Jason Hall</div>
-        <ul class="nav__link--list">
-          <li class="nav__link">
-            <a
-              href="#languages"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Languages</a
-            >
-          </li>
-
-          <li class="nav__link">
-            <a
-              href="#projects"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Projects</a
-            >
-          </li>
-          <li class="nav__link">
-            <a
-              href="mailto:jason.hall.sde@gmail.com"
-              class="nav__link--anchor nav__link--anchor-primary"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="flex flex-1">
-        <div class="about-me__info row">
-          <div class="about-me__info--container">
-            <figure class="about-me__picture-mask">
+    <header>
+      <section id="about-me" onmousemove="moveBackground(event)">
+        <nav>
+          <div class="personal__logo">Jason Hall</div>
+          <ul class="nav__link--list">
+            <li class="nav__link" onclick="toggleModal()">
+              <a
+                href="#"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >About</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#projects"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Projects</a
+              >
+            </li>
+            <li class="nav__link" onclick="toggleModal()">
+              <a href="#" class="nav__link--anchor nav__link--anchor-primary"
+                >Contact</a
+              >
+            </li>
+            <li class="nav__link click" onclick="toggleContrast()">
+              <a href="#" class="nav__link--anchor"
+                ><i class="fa-solid fa-circle-half-stroke"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="flex flex-1">
+          <div class="about-me__info row">
+            <div class="about-me__info--container">
+              <!-- <figure class="about-me__picture-mask">
+                <img
+                  src="./assets/profile_pic.png"
+                  alt="Picture of me"
+                  class="about-me__picture"
+                />
+              </figure> -->
+            </div>
+            <h1 class="title about-me__info--title">
+              Hey! <br />
+              I'm <span class="text--color">Jason.</span>&nbsp;
+              <!-- <span class="hand-ani">🤟🏾</span> -->
+            </h1>
+            <p class="about-me__info--para">
+              I'm a creative
+              <strong class="text--color">Frontend Software Engineer</strong>
+              passionate about building user-friendly web interfaces and
+              delivering seamless digital experiences. Here's a bit more
+              <strong class="text--color click" onclick="toggleModal()"
+                >about me</strong
+              >
+            </p>
+            <div class="about-me__links">
+              <a
+                href="https://www.linkedin.com/in/jason-hall-52a0a1113/"
+                target="_blank"
+                class="about-me__link click"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://github.com/jayelaych-sde"
+                target="_blank"
+                class="about-me__link click"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!-- <a
+                href="mailto:jason.hall.sde@gmail.com"
+                target="_blank"
+                class="about-me__link click"
+                ><i class="fa-regular fa-envelope"></i
+              ></a> -->
+              <a
+                href="./assets/JasonHallResume.pdf"
+                target="_blank"
+                class="about-me__link click"
+              >
+                <i class="fa-solid fa-file"></i
+              ></a>
+            </div>
+            <!-- <figure class="about-me__img--container">
               <img
-                src="./assets/profile_pic.png"
-                alt="Picture of me"
-                class="about-me__picture"
+                src="./assets/undraw_website.svg"
+                alt=""
+                class="about-me__img"
               />
-            </figure>
+            </figure> -->
           </div>
-          <h1 class="about-me__info--title">
-            Hey! I'm <span class="text--color">Jason Hall</span>&nbsp;
-            <span class="hand-ani">🤟🏾</span>
-          </h1>
-          <p class="about-me__info--para">
-            I'm a creative
-            <strong class="text--color">frontend software engineer</strong>
-            passionate about building user-friendly web interfaces and
-            delivering seamless digital experiences. I thrive on solving
-            challenges and staying updated with the latest in web development.
-          </p>
-          <div class="about-me__links">
-            <a
-              href="https://www.linkedin.com/in/jason-hall-52a0a1113/"
-              target="_blank"
-              class="about-me__link"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a
-              href="https://github.com/jayelaych-sde"
-              target="_blank"
-              class="about-me__link"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a
-              href="mailto:jason.hall.sde@gmail.com"
-              target="_blank"
-              class="about-me__link"
-              ><i class="fa-regular fa-envelope"></i
-            ></a>
-            <a
-              href="./assets/JasonHallResume.pdf"
-              target="_blank"
-              class="about-me__link"
-              ><i class="fa-solid fa-file-pdf"></i
-            ></a>
-          </div>
-          <figure class="about-me__img--container">
-            <img
-              src="./assets/undraw_website.svg"
-              alt=""
-              class="about-me__img"
-            />
-          </figure>
         </div>
-      </div>
-    </section>
-    <section id="languages">
-      <div class="container">
-        <div class="row">
-          <h1 class="section__title">
-            This is my <span class="text--color">technology stack</span>
-          </h1>
+        <img src="./assets/semi circle.svg" class="shape shape--0" />
+        <img src="./assets/circle.svg" class="shape shape--1" />
+        <img src="./assets/squiggly.svg" class="shape shape--2" />
+        <img src="./assets/circle.svg" class="shape shape--3" />
+        <img src="./assets/triangle.svg" class="shape shape--4" />
+        <img src="./assets/circle.svg" class="shape shape--5" />
+        <img src="./assets/squiggly.svg" class="shape shape--6" />
+        <img src="./assets/circle.svg" class="shape shape--7" />
+        <img src="./assets/semi circle.svg" class="shape shape--8" />
+      </section>
+    </header>
+    <button class="mail__btn click" onclick="toggleModal()">
+      <i class="fa-solid fa-envelope"></i>
+    </button>
+    <a href="#projects" class="scroll">
+      <div class="scroll__icon click"></div>
+    </a>
+    <div class="modal">
+      <div class="modal__half modal__about">
+        <h3 class="modal__title modal__title--about">Get to know me!</h3>
+        <h4 class="modal__sub-title modal__sub-title--about">
+          Frontend Software Engineer.
+        </h4>
+        <p class="modal__para">
+          I'm a creative 28 year-old
+          <strong class="text--color">frontend software engineer</strong>
+          passionate about building
+          <strong class="text--color">user-friendly web interfaces</strong> and
+          delivering seamless digital experiences.
+          <br />
+          I thrive on solving challenges and staying updated with the latest in
+          web development and learn from a team consisting of some of the most
+          <strong class="text--color">talented</strong> and
+          <strong class="text--color">experienced</strong> software engineers
+          every day.
+        </p>
+        <div class="modal__languages">
           <div class="language__list">
             <div class="language">
               <figure class="language__img--wrapper">
@@ -187,132 +236,268 @@
           </div>
         </div>
       </div>
-    </section>
-    <section id="projects">
-      <div class="container">
-        <div class="row">
-          <h1 class="section__title">
-            Here are some of my <span class="text--color">projects</span>
-          </h1>
-          <ul class="projects__list">
-            <li class="project">
-              <div class="project__wrapper">
-                <img
-                  src="./assets/projects/loopit.png"
-                  alt=""
-                  class="project__img"
-                />
-                <div class="project__description">
-                  <h3 class="project__description--title">Car Sales Project</h3>
-                  <h4 class="project__description--sub-title">
-                    HTML, CSS, Javascript, Vue, Vuex
-                  </h4>
-                  <p class="project__description--para">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quod fugiat impedit voluptatum voluptatibus, non veritatis
-                    rerum officia illum porro provident sunt pariatur veniam,
-                    necessitatibus aut molestias ab, eligendi praesentium
-                    aspernatur.
-                  </p>
-                  <div class="project__description--links">
-                    <a
-                      href="https://jayelaych-sde.github.io/Sequoia/"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a
-                      href="https://jayelaych.com"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fa-solid fa-link"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="project">
-              <div class="project__wrapper">
-                <img
-                  src="./assets/projects/dashboard.png"
-                  alt=""
-                  class="project__img"
-                />
-                <div class="project__description">
-                  <h3 class="project__description--title">Dashboard Project</h3>
-                  <h4 class="project__description--sub-title">
-                    HTML, CSS, Javascript, Vue, Vuex
-                  </h4>
-                  <p class="project__description--para">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quod fugiat impedit voluptatum voluptatibus, non veritatis
-                    rerum officia illum porro provident sunt pariatur veniam,
-                    necessitatibus aut molestias ab, eligendi praesentium
-                    aspernatur.
-                  </p>
-                  <div class="project__description--links">
-                    <a
-                      href="https://jayelaych-sde.github.io/Sequoia/"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a
-                      href="https://jayelaych.com"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fa-solid fa-link"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="project">
-              <div class="project__wrapper">
-                <img
-                  src="./assets/projects/chat.png"
-                  alt=""
-                  class="project__img"
-                />
-                <div class="project__description">
-                  <h3 class="project__description--title">Chat App</h3>
-                  <h4 class="project__description--sub-title">
-                    HTML, CSS, Javascript, Vue, Vuex
-                  </h4>
-                  <p class="project__description--para">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quod fugiat impedit voluptatum voluptatibus, non veritatis
-                    rerum officia illum porro provident sunt pariatur veniam,
-                    necessitatibus aut molestias ab, eligendi praesentium
-                    aspernatur.
-                  </p>
-                  <div class="project__description--links">
-                    <a
-                      href="https://jayelaych-sde.github.io/Sequoia/"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a
-                      href="https://jayelaych.com"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fa-solid fa-link"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+      <div class="modal__half modal__contact">
+        <i
+          class="fa-solid fa-times modal__exit click"
+          onclick="toggleModal()"
+        ></i>
+        <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
+        <h4 class="modal__sub-title modal__sub-title--contact">
+          I'm currently open to new opportunities.
+        </h4>
+        <form id="contact__form" onsubmit="contact(event)">
+          <div class="form__item">
+            <label class="form__item--label">Name</label>
+            <input class="input" name="user_name" type="text" required />
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">E-mail</label>
+            <input
+              class="input"
+              name="user_email"
+              type="email"
+              id=""
+              required
+            />
+          </div>
+          <div class="form__item">
+            <label class="form__item--label">Message</label>
+            <textarea class="input" name="message" id="" required></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">
+            Send it my way
+          </button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fa-solid fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for the message! Looking forward to speaking to you soon!
         </div>
       </div>
-    </section>
+    </div>
+    <main>
+      <section id="projects">
+        <div class="container">
+          <div class="row">
+            <h1 class="section__title">
+              Here are some of my <span class="text--color">projects</span>
+            </h1>
+            <ul class="projects__list">
+              <li class="project">
+                <div class="project__wrapper">
+                  <img
+                    src="./assets/projects/loopit.png"
+                    alt=""
+                    class="project__img"
+                  />
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Car Sales Project
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, Javascript, Vue, Vuex
+                    </h4>
+                    <p class="project__description--para">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Quod fugiat impedit voluptatum voluptatibus, non veritatis
+                      rerum officia illum porro provident sunt pariatur veniam,
+                      necessitatibus aut molestias ab, eligendi praesentium
+                      aspernatur.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://jayelaych-sde.github.io/Sequoia/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://jayelaych.com"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-solid fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="project">
+                <div class="project__wrapper">
+                  <img
+                    src="./assets/projects/dashboard.png"
+                    alt=""
+                    class="project__img"
+                  />
+                  <div class="project__description">
+                    <h3 class="project__description--title">
+                      Dashboard Project
+                    </h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, Javascript, Vue, Vuex
+                    </h4>
+                    <p class="project__description--para">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Quod fugiat impedit voluptatum voluptatibus, non veritatis
+                      rerum officia illum porro provident sunt pariatur veniam,
+                      necessitatibus aut molestias ab, eligendi praesentium
+                      aspernatur.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://jayelaych-sde.github.io/Sequoia/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://jayelaych.com"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-solid fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="project">
+                <div class="project__wrapper">
+                  <img
+                    src="./assets/projects/chat.png"
+                    alt=""
+                    class="project__img"
+                  />
+                  <div class="project__description">
+                    <h3 class="project__description--title">Chat App</h3>
+                    <h4 class="project__description--sub-title">
+                      HTML, CSS, Javascript, Vue, Vuex
+                    </h4>
+                    <p class="project__description--para">
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Quod fugiat impedit voluptatum voluptatibus, non veritatis
+                      rerum officia illum porro provident sunt pariatur veniam,
+                      necessitatibus aut molestias ab, eligendi praesentium
+                      aspernatur.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://jayelaych-sde.github.io/Sequoia/"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                      <a
+                        href="https://jayelaych.com"
+                        target="_blank"
+                        class="project__description--link"
+                      >
+                        <i class="fa-solid fa-link"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- <section id="languages">
+        <div class="container">
+          <div class="row">
+            <h1 class="section__title">
+              This is my <span class="text--color">technology stack</span>
+            </h1>
+            <div class="language__list">
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+                    alt="HTML"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">HTML</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
+                    alt="CSS"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">CSS</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                    alt="Javascript"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">Javascript</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                    alt="React"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">React</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="./assets/java_logo.png"
+                    alt="Java"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">Java</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                    alt="Python"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">Python</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+                    alt="Typescript"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">Typescript</span>
+              </div>
+              <div class="language">
+                <figure class="language__img--wrapper">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+                    alt="AWS"
+                    class="language__img"
+                  />
+                </figure>
+                <span class="language__name">AWS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+    </main>
     <footer>
       <div class="row footer__row">
         <a href="#" class="footer__anchor">
