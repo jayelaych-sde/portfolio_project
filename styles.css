@@ -946,3 +946,47 @@ footer {
     margin: 12px 0;
   }
 }
+
+@media (max-width: 375px) {
+  .about-me__info--para {
+    padding-top: 0;
+  }
+
+  .scroll {
+    display: none;
+  }
+
+  .mail__btn {
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    right: 24px;
+    bottom: 32px;
+  }
+
+  .modal__half {
+    padding: 24px;
+    height: 50%;
+  }
+
+  .modal__para {
+    font-size: 14px;
+  }
+
+  .form__submit {
+    padding: 8px 16px;
+  }
+
+  textarea {
+    height: 40px;
+  }
+
+  .language {
+    width: calc(100% / 8);
+    padding: 8px;
+  }
+
+  .shape {
+    display: none;
+  }
+}
